@@ -138,12 +138,15 @@
 
     Widget.renderMyFriendsWidget = function(widget, callback) {
         var count = Math.max(1, widget.data.numUsers || 24);
-        user.getUsersFromSet('users:joindate', widget.uid, 0, count - 1, function(err, users) {
-            if (err) {
-                return callback(err);
-            }
-            app.render('widgets/friends', {users: users}, callback);
-        });
+        //user.getUsersFromSet('users:joindate', widget.uid, 0, count - 1, function(err, users) {
+        //    if (err) {
+        //        return callback(err);
+        //    }
+        //    app.render('widgets/friends', {users: users}, callback);
+        //});
+
+        var followers = user.getFollowers;
+        app.render('widgets/friends', {users: followers}, callback);
     };
 
 
