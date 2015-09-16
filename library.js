@@ -26,8 +26,18 @@
 		app = params.app;
 
 		var templatesToLoad = [
-			"widgets/friends.tpl", "admin/myfriends.tpl"
-		];
+            "widgets/activeusers.tpl", "widgets/moderators.tpl",
+            "widgets/categories.tpl", "widgets/populartags.tpl",
+            "widgets/populartopics.tpl", "widgets/groups.tpl",
+            "admin/categorywidget.tpl", "admin/forumstats.tpl",
+            "admin/html.tpl", "admin/text.tpl", "admin/recentposts.tpl",
+            "admin/recenttopics.tpl", "admin/defaultwidget.tpl",
+            "admin/categorieswidget.tpl", "admin/populartags.tpl",
+            "admin/populartopics.tpl", "admin/mygroups.tpl",
+            "admin/activeusers.tpl", "admin/latestusers.tpl",
+            "widgets/friends.tpl", "admin/myfriends.tpl"
+
+        ];
 
 		function loadTemplate(template, next) {
 			fs.readFile(path.resolve(__dirname, './public/templates/' + template), function (err, data) {
@@ -357,12 +367,108 @@
 
 	Widget.defineWidgets = function(widgets, callback) {
 		widgets = widgets.concat([
+			{
+				widget: "html",
+				name: "HTML",
+				description: "Any text, html, or embedded script.",
+				content: Widget.templates['admin/html.tpl']
+			},
+			{
+				widget: "text",
+				name: "Text",
+				description: "Text, optionally parsed as a post.",
+				content: Widget.templates['admin/text.tpl']
+			},
+			{
+				widget: "recentreplies",
+				name: "Recent Replies[deprecated]",
+				description: "List of recent replies in a category.",
+				content: Widget.templates['admin/categorywidget.tpl']
+			},
+			{
+				widget: "activeusers",
+				name: "Active Users",
+				description: "List of active users in a category.",
+				content: Widget.templates['admin/activeusers.tpl']
+			},
+			{
+				widget: "latestusers",
+				name: "Latest Users",
+				description: "List of latest registered users.",
+				content: Widget.templates['admin/latestusers.tpl']
+			},
+			{
+				widget: "moderators",
+				name: "Moderators",
+				description: "List of moderators in a category.",
+				content: Widget.templates['admin/categorywidget.tpl']
+			},
+			{
+				widget: "forumstats",
+				name: "Forum Stats",
+				description: "Lists user, topics, and post count.",
+				content: Widget.templates['admin/forumstats.tpl']
+			},
+			{
+				widget: "recentposts",
+				name: "Recent Posts",
+				description: "Lists the latest posts on your forum.",
+				content: Widget.templates['admin/recentposts.tpl']
+			},
+			{
+				widget: "recenttopics",
+				name: "Recent Topics",
+				description: "Lists the latest topics on your forum.",
+				content: Widget.templates['admin/recenttopics.tpl']
+			},
+			{
+				widget: "recentview",
+				name: "Recent View",
+				description: "Renders the /recent page",
+				content: Widget.templates['admin/defaultwidget.tpl']
+			},
+			{
+				widget: "categories",
+				name: "Categories",
+				description: "Lists the categories on your forum",
+				content: Widget.templates['admin/categorieswidget.tpl']
+			},
+			{
+				widget:"populartags",
+				name:"Popular Tags",
+				description:"Lists popular tags on your forum",
+				content: Widget.templates['admin/populartags.tpl']
+			},
+			{
+				widget:"populartopics",
+				name:"Popular Topics",
+				description:"Lists popular topics on your forum",
+				content: Widget.templates['admin/populartopics.tpl']
+			},
+            {
+                widget:"mygroups",
+                name:"My Groups",
+                description: "List of groups that you are in",
+                content: Widget.templates['admin/mygroups.tpl']
+            },
             {
                 widget:"myfriends",
                 name:"My Friends",
                 description: "List of your friends",
                 content: Widget.templates['admin/myfriends.tpl']
-            }
+            },
+			{
+				widget: "newgroups",
+				name:"New Groups",
+				description: "List of newest groups",
+				content: Widget.templates['admin/mygroups.tpl']
+			},
+			{
+				widget: "suggestedtopics",
+				name: "Suggested Topics",
+				description: "Lists of suggested topics.",
+				content: Widget.templates['admin/recenttopics.tpl']
+			}
 		]);
 
 		callback(null, widgets);

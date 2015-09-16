@@ -5,9 +5,15 @@
 	"url": "https://github.com/thuanpq1d9/nodebb-widget-advanced-essentials",
 	"library": "./library.js",
 	"hooks": [
-        {
+      {
+        "hook": "static:app.load", "method": "init"
+      },
+      {
+        "hook": "filter:widgets.getWidgets", "method": "defineWidgets"
+      },
+      {
           "hook": "filter:widget.render:myfriends", "method": "renderMyFriendsWidget"
-        }
+      }
 	],
 	"templates": "./public/templates",
 	"css": [
