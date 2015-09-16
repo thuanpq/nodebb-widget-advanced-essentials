@@ -443,12 +443,18 @@
 				description:"Lists popular topics on your forum",
 				content: Widget.templates['admin/populartopics.tpl']
 			},
-			{
-				widget:"mygroups",
-				name:"My Groups",
-				description: "List of groups that you are in",
-				content: Widget.templates['admin/mygroups.tpl']
-			},
+            {
+                widget:"mygroups",
+                name:"My Groups",
+                description: "List of groups that you are in",
+                content: Widget.templates['admin/mygroups.tpl']
+            },
+            {
+                widget:"myfriends",
+                name:"My Friends",
+                description: "List of your friends",
+                content: Widget.templates['admin/myfriends.tpl']
+            },
 			{
 				widget: "newgroups",
 				name:"New Groups",
