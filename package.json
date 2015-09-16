@@ -1,7 +1,7 @@
 {
   "name": "nodebb-widget-advanced-essentials",
   "version": "0.1",
-  "description": "NodeBB Essential Widgets",
+  "description": "NodeBB Advanced Essential Widgets",
   "main": "library.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,8 +18,8 @@
     "text"
   ],
   "author": {
-    "name": "psychobunny",
-    "email": "psycho.bunny@hotmail.com"
+    "name": "thuanpq",
+    "email": "eragon009nt@gmail.com"
   },
   "license": "BSD-2-Clause",
   "bugs": {

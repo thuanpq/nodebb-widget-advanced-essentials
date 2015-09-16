@@ -29,7 +29,6 @@
 			"widgets/activeusers.tpl", "widgets/moderators.tpl",
 			"widgets/categories.tpl", "widgets/populartags.tpl",
 			"widgets/populartopics.tpl", "widgets/groups.tpl",
-
 			"admin/categorywidget.tpl", "admin/forumstats.tpl",
 			"admin/html.tpl", "admin/text.tpl", "admin/recentposts.tpl",
 			"admin/recenttopics.tpl", "admin/defaultwidget.tpl",
@@ -125,15 +124,25 @@
 		}
 	};
 
-	Widget.renderLatestUsersWidget = function(widget, callback) {
-		var count = Math.max(1, widget.data.numUsers || 24);
-		user.getUsersFromSet('users:joindate', widget.uid, 0, count - 1, function(err, users) {
-			if (err) {
-				return callback(err);
-			}
-			app.render('widgets/latestusers', {users: users}, callback);
-		});
-	};
+    Widget.renderLatestUsersWidget = function(widget, callback) {
+        var count = Math.max(1, widget.data.numUsers || 24);
+        user.getUsersFromSet('users:joindate', widget.uid, 0, count - 1, function(err, users) {
+            if (err) {
+                return callback(err);
+            }
+            app.render('widgets/latestusers', {users: users}, callback);
+        });
+    };
+
+    Widget.renderMyFriendsWidget = function(widget, callback) {
+        var count = Math.max(1, widget.data.numUsers || 24);
+        user.getUsersFromSet('users:joindate', widget.uid, 0, count - 1, function(err, users) {
+            if (err) {
+                return callback(err);
+            }
+            app.render('widgets/friends', {users: users}, callback);
+        });
+    };
 
 
 	Widget.renderModeratorsWidget = function(widget, callback) {
