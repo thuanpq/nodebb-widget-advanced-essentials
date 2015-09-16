@@ -4,4 +4,4 @@ Several basic widgets bundled together in one package including 'HTML', 'Markdow
 
 ## Installation
 
-    npm install nodebb-widget-essentials
+    npm install nodebb-widget-advanced-essentials

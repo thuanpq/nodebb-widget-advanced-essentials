@@ -1,6 +1,6 @@
 {
-  "name": "nodebb-widget-essentials",
-  "version": "2.0.1",
+  "name": "nodebb-widget-advanced-essentials",
+  "version": "0.1",
   "description": "NodeBB Essential Widgets",
   "main": "library.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/psychobunny/nodebb-widget-essentials"
+    "url": "https://github.com/thuanpq1d9/nodebb-widget-advanced-essentials"
   },
   "keywords": [
     "nodebb",
@@ -23,12 +23,12 @@
   },
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/psychobunny/nodebb-widget-essentials/issues"
+    "url": "https://github.com/thuanpq1d9/nodebb-widget-advanced-essentials/issues"
   },
   "readme": "",
   "readmeFilename": "README.md",
-  "_id": "nodebb-widget-essentials@0.0.1",
-  "_from": "nodebb-widget-essentials@~0.0.1",
+  "_id": "nodebb-widget-advanced-essentials@0.0.1",
+  "_from": "nodebb-widget-advanced-essentials@~0.0.1",
   "nbbpm": {
     "compatibility": "^0.7.0 || ^0.8.0"
   }
